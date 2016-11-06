@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A3DB9848F424ABE5B7872FB29FA3C511E2BDFD30",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "A3DB9848F424ABE5B7872FB29FA3C511E2BDFD30" : 9223372036854775807,
+    "B9A3900247565D08C40D13E8062D5160D060019D" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "3211481C-9A7D-47C5-BBE4-A10474C4E580",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "A3DB9848F424ABE5B7872FB29FA3C511E2BDFD30" : "calculator\/",
+    "B9A3900247565D08C40D13E8062D5160D060019D" : ".."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "calculator",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "calculator.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/sush4\/calculator_swift_trial.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A3DB9848F424ABE5B7872FB29FA3C511E2BDFD30"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/girish_koundinya\/ios_questions.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B9A3900247565D08C40D13E8062D5160D060019D"
+    }
+  ]
+}

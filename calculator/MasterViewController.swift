@@ -8,10 +8,23 @@
 
 import UIKit
 
+enum operation : Int {
+    case addition = 0,
+    subtraction ,
+    multiplication ,
+    divide ,
+    percengate
+}
+
 class MasterViewController: UIViewController {
 
     @IBOutlet weak var screenTextFeild: UITextField!
-
+    
+    var operations : Int!
+    var inputValue : Double!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -78,41 +91,100 @@ class MasterViewController: UIViewController {
     }
     
     @IBAction func clearButton(_ sender: AnyObject) {
-        NSLog("clear button");
+        operations = -1
+        screenTextFeild.text = ""
     }
     
     @IBAction func signButton(_ sender: AnyObject) {
-        NSLog("sign button");
+        
+        var inputNumber : Double!
+        inputNumber = Double(screenTextFeild.text!) != nil ? Double(screenTextFeild.text!) : 0
+        inputNumber = inputNumber != 0 ? -inputNumber : 0
+        screenTextFeild.text = String(inputNumber)
     }
     
     @IBAction func percentageButton(_ sender: AnyObject) {
-        NSLog("percentage button");
+        
+        var inputValue2 : Double!
+        inputValue2 = Double(screenTextFeild.text!) != nil ? Double(screenTextFeild.text!) : 0
+        inputValue2 = inputValue2/100
+        screenTextFeild.text = String(inputValue2)
     }
     
     @IBAction func divideButton(_ sender: AnyObject) {
-        NSLog("Divide button");
+        operations = operation.divide.rawValue
+        inputValue = Double(screenTextFeild.text!)
+        screenTextFeild.text = ""
     }
     
     @IBAction func multipleButton(_ sender: AnyObject) {
-        NSLog("multiple button");
+        operations = operation.multiplication.rawValue
+        inputValue = Double(screenTextFeild.text!)
+        screenTextFeild.text = ""
     }
     
     @IBAction func subtractButton(_ sender: AnyObject) {
-        NSLog("subtract button");
+        operations = operation.subtraction.rawValue
+        inputValue = Double(screenTextFeild.text!)
+        screenTextFeild.text = ""
     }
     
     @IBAction func additionButton(_ sender: AnyObject) {
-        NSLog("addition button");
+        operations = operation.addition.rawValue
+        inputValue = Double(screenTextFeild.text!)
+        screenTextFeild.text = ""
+    }
+    
+    @IBAction func dotButton(_ sender: AnyObject) {
+        
+        if screenTextFeild.text?.range(of:".") == nil {
+            screenTextFeild.text = screenTextFeild.text! + ".";
+        }
     }
     
     @IBAction func equalButton(_ sender: AnyObject) {
-        NSLog("equal button");
+        
+        var inputValue2 : Double!
+        
+        switch operations {
+            
+        case operation.addition.rawValue:
+            
+            inputValue2 = Double(screenTextFeild.text!) != nil ? Double(screenTextFeild.text!) : 0
+            inputValue2 = inputValue + inputValue2
+            screenTextFeild.text = String(inputValue2)
+            
+        case operation.subtraction.rawValue:
+            
+            inputValue2 = Double(screenTextFeild.text!) != nil ? Double(screenTextFeild.text!) : 0
+            inputValue2 = inputValue - inputValue2
+            screenTextFeild.text = String(inputValue2)
+            
+        case operation.multiplication.rawValue:
+            
+            inputValue2 = Double(screenTextFeild.text!) != nil ? Double(screenTextFeild.text!) : 0
+            inputValue2 = inputValue * inputValue2
+            screenTextFeild.text = String(inputValue2)
+            
+        case operation.divide.rawValue:
+            
+            inputValue2 = Double(screenTextFeild.text!) != nil ? Double(screenTextFeild.text!) : 0
+            inputValue2 = inputValue / inputValue2
+            screenTextFeild.text = String(inputValue2)
+            
+        case operation.percengate.rawValue:
+            
+            inputValue2 = Double(screenTextFeild.text!) != nil ? Double(screenTextFeild.text!) : 0
+            inputValue2 = inputValue2/100
+            screenTextFeild.text = String(inputValue2)
+            
+        default:
+            print("default");
+            
+        }
     }
     
     
-    @IBAction func dotButton(_ sender: AnyObject) {
-        screenTextFeild.text = screenTextFeild.text! + ".";
-    }
 
 
 }
